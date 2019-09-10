@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+    django_crud:
+        build:
+            context: ../
+            dockerfile: docker/Dockerfile
+        image: crud_django:latest
+        volumes:
+            - ../:/code
+        ports:
+            - "8000:8000"
+        command: python manage.py runserver 0.0.0.0:8000
+        depends_on:
+            - postgres_crud
+
+    postgres_crud:
+        image: postgres:11.5

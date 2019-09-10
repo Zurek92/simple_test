@@ -1,0 +1,9 @@
+[tool.black]
+line-length = 100
+skip-string-normalization = true
+exclude = '/crud'
+
+[tool.isort]
+known_first_party = 'crud_django'
+known_third_party = 'django'
+sections = 'STDLIB,THIRDPARTY,FIRSTPARTY'
